@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Usage:
+#   ./tools/gen_insta path/to/textfile.txt output.png
+
+TEXTFILE="$1"
+OUTPUT="$2"
+
+if [ -z "$TEXTFILE" ] || [ -z "$OUTPUT" ]; then
+  echo "Usage: $0 textfile output.png"
+  exit 1
+fi
+
+magick convert \
+  -size 800x1000 \
+  "canvas:#18181b" \
+  -gravity center \
+  -fill "#00d992" \
+  -font "/System/Library/Fonts/Menlo.ttc" \
+  -pointsize 50 \
+  -annotate 0 @"$TEXTFILE" \
+  "$OUTPUT"
