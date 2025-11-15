@@ -17,6 +17,6 @@ magick convert \
   -gravity center \
   -fill "#00d992" \
   -font "/System/Library/Fonts/Menlo.ttc" \
-  -pointsize 50 \
+  -pointsize 45 \
   -annotate 0 @"$TEXTFILE" \
   "$OUTPUT"
